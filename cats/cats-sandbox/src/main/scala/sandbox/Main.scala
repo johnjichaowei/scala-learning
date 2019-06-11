@@ -1,8 +1,8 @@
 package sandbox
 
-import cats.instances.string._
-import cats.syntax.semigroup._
+import c1.show._
+import cats.syntax.show._
 
 object Main extends App {
-  println("Hello " |+| "Cats!")
+  println(Cat("Tom", 12, "Brown").show)
 }
