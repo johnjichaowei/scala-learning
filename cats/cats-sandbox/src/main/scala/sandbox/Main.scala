@@ -1,17 +1,18 @@
 package sandbox
 
-// import cats.Eq
-import cats.instances.int._
-import cats.instances.string._
+import c1.show._
 import cats.instances.option._
-import cats.syntax.eq._
-import cats.syntax.option._
+import cats.syntax.all._
 
 object Main extends App {
-  println(s"Test: ${123 === 123}")
-  println(s"Test: ${"123" =!= "1243"}")
-  println(s"Test: ${ (Some(1): Option[Int]) === (None: Option[Int]) }")
-  println(s"Test: ${ Option(1) === Option.empty[Int]}")
-  println(s"Test: ${ 1.some === 1.some}")
-  println(s"Test: ${ 1.some =!= none[Int]}")
+  val cat1 = Cat("Tom", 12, "brown")
+  val cat2 = Cat("Jack", 11, "black")
+  println(s"Test: ${cat1 === cat1}")
+  println(s"Test: ${cat1 === cat2}")
+
+  val optionCat1 = Option(cat1)
+  val optionCat2 = Option.empty[Cat]
+
+  println(s"Test: ${optionCat1 === optionCat1}")
+  println(s"Test: ${optionCat1 === optionCat2}")
 }
