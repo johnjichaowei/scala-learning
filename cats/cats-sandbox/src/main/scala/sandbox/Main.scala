@@ -1,18 +1,20 @@
 package sandbox
 
-import c1.show._
-import cats.instances.option._
-import cats.syntax.all._
+import c3.tree._
+import cats.Functor
+import cats.syntax.show._
+import cats.syntax.functor._
 
 object Main extends App {
-  val cat1 = Cat("Tom", 12, "brown")
-  val cat2 = Cat("Jack", 11, "black")
-  println(s"Test: ${cat1 === cat1}")
-  println(s"Test: ${cat1 === cat2}")
-
-  val optionCat1 = Option(cat1)
-  val optionCat2 = Option.empty[Cat]
-
-  println(s"Test: ${optionCat1 === optionCat1}")
-  println(s"Test: ${optionCat1 === optionCat2}")
+  val functorTree = Functor[Tree]
+  val branch = Branch(Leaf(1), Leaf(2))
+  val branch1 = functorTree.map(Leaf(2))(_ * 2)
+  val tree = Tree.branch(Tree.leaf(1), Tree.leaf(2))
+  println(s"tree: ${tree.show}")
+  val tree1 = functorTree.map(tree)(_ * 2)
+  println(s"tree1: ${tree1.show}")
+  val tree2 = Tree.leaf(1).map(_ * 2)
+  println(s"tree2: ${tree2.show}")
+  val tree3 = Tree.branch(Tree.leaf(1), Tree.leaf(2)).map(_ * 2)
+  println(s"tree3: ${tree3.show}")
 }
