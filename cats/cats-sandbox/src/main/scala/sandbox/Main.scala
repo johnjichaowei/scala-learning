@@ -1,8 +1,11 @@
 package sandbox
 
-import c4.eval._
+import c4.writer._
 
 object Main extends App {
-  val result = SaferFolding.foldRight((1 to 100000).toList, 0L)(_ + _)
-  println(s"Result: $result")
+  val result1 = WriterTest.factorialParallel1
+  println("\nWith writer: ")
+  val Vector((logA, ansA), (logB, ansB)) = WriterTest.factorialParallel2
+  println(s"logA: $logA, ansA: $ansA")
+  println(s"logB: $logB, ansB: $ansB")
 }
