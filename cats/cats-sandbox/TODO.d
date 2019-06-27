@@ -6,3 +6,5 @@
   We won’t need to use MonadError unless we need to abstract over error handling monads.
   For example, you can use MonadError to ab- stract over Future and Try,
   or over Either and EitherT (which we will meet in Chapter 5).
+- 4.10 Defining Custom Monads
+- 5 Monad Transformers
