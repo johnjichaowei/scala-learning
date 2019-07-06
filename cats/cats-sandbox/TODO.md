@@ -1,4 +1,6 @@
 
+## Sections skipped in the first round of reading
+
 - 3.6 Contravariant and Invariant Functors
   Come back here before reading Chapter 6.
 - 4.5 Aside: Error Handling and MonadError
@@ -8,3 +10,5 @@
   or over Either and EitherT (which we will meet in Chapter 5).
 - 4.10 Defining Custom Monads
 - 5 Monad Transformers
+- 11 Case Study: CRDTs
+
